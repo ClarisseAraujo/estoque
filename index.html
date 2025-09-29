@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Controle de Estoque</h3>
+            </div>
+            <ul>
+                <li><a href="#" class="nav-link active" data-target="dashboard"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="#" class="nav-link" data-target="produtos"><i class="fas fa-box-open"></i> Produtos</a></li>
+                <li><a href="#" class="nav-link" data-target="categorias"><i class="fas fa-tags"></i> Categorias</a></li>
+                <li><a href="#" class="nav-link" data-target="usuarios"><i class="fas fa-users"></i> Usuários</a></li>
+                <li><a href="#" class="nav-link" data-target="movimentacoes"><i class="fas fa-exchange-alt"></i> Movimentações</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <section id="dashboard-view" class="view active-view">
+                <h1>Dashboard</h1>
+                <p>Bem-vindo ao sistema, Clarisse!</p>
+                <div class="stats-cards">
+                    <div class="card">
+                        <h4>Total de Produtos</h4>
+                        <p id="total-produtos">125</p>
+                    </div>
+                    <div class="card">
+                        <h4>Categorias Ativas</h4>
+                        <p id="total-categorias">8</p>
+                    </div>
+                    <div class="card">
+                        <h4>Usuários Cadastrados</h4>
+                        <p id="total-usuarios">4</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="produtos-view" class="view">
+                <div class="view-header">
+                    <h1>Gestão de Produtos</h1>
+                    <button class="btn btn-primary" id="btn-novo-produto"><i class="fas fa-plus"></i> Novo Produto</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>SKU</th>
+                            <th>Categoria</th>
+                            <th>Estoque</th>
+                            <th>Preço Venda</th>
+                            <th>Fornecedor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="produtos-table-body">
+                        </tbody>
+                </table>
+            </section>
+
+            <section id="categorias-view" class="view">
+                 <div class="view-header">
+                    <h1>Gestão de Categorias</h1>
+                    <button class="btn btn-primary" id="btn-nova-categoria"><i class="fas fa-plus"></i> Nova Categoria</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="categorias-table-body">
+                        </tbody>
+                </table>
+            </section>
+
+             <section id="usuarios-view" class="view">
+                 <div class="view-header">
+                    <h1>Gestão de Usuários</h1>
+                    <button class="btn btn-primary" id="btn-novo-usuario"><i class="fas fa-plus"></i> Novo Usuário</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Login</th>
+                            <th>Perfil</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usuarios-table-body">
+                        </tbody>
+                </table>
+            </section>
+            
+            <section id="movimentacoes-view" class="view">
+                 <div class="view-header">
+                    <h1>Registro de Movimentações</h1>
+                    <div>
+                         <button class="btn btn-success" id="btn-nova-entrada"><i class="fas fa-arrow-up"></i> Registrar Entrada</button>
+                         <button class="btn btn-warning" id="btn-nova-saida"><i class="fas fa-arrow-down"></i> Registrar Saída</button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Produto</th>
+                            <th>Tipo</th>
+                            <th>Quantidade</th>
+                            <th>Usuário</th>
+                        </tr>
+                    </thead>
+                    <tbody id="movimentacoes-table-body">
+                        </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Título do Modal</h2>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="modal-form">
+                    </form>
+            </div>
+             <div class="modal-footer">
+                <button class="btn btn-secondary" id="btn-cancelar-modal">Cancelar</button>
+                <button type="submit" form="modal-form" class="btn btn-primary" id="btn-salvar-modal">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
